@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+
+<head>
+   <meta charset="utf-8">
+   <title>Крестики-нолики</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="page__body">
+   <h1>Крестики-нолики</h1>
+   <main class="page-main">
+
+      <section class="playground">
+         <h2 class="playground__title">Игра №<span class="playground__game-number"></span></h2>
+         <div class="playground__players">
+            <p class="playground__current-player">Ходит:</p>
+            <svg class="playground__icons user active" width="100" alt="Пользователь" version="1.1" xmlns="http://www.w3.org/2000/svg"
+               xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 487.678 487.678"
+               style="enable-background:new 0 0 487.678 487.678;" xml:space="preserve">
+               <g>
+                  <g>
+                     <path
+                        d="M377.996,282.347c-56.201-18.357-79.563-41.185-79.563-41.185l-1.881,1.793
+               			c-16.69,15.709-35.149,24.944-51.965,24.944H243c-16.815,0-35.274-9.235-51.964-24.944l-1.882-1.793
+               			c0,0-23.36,22.827-79.562,41.185c-82.964,30.992-58.053,157.119-58.077,158.096c2.613,14.047,4.136,18.875,5.463,19.417
+               			c83.314,37.091,290.319,37.091,373.634,0c1.327-0.542,2.85-5.37,5.463-19.417C436.051,439.466,461.295,313.84,377.996,282.347z" />
+                     <path
+                        d="M330.924,121.441l-0.696-0.755c-4.668-4.274-4.303-4.029-4.303-4.029s8.142-41.083,1.613-60.511
+               			c-10.25-31.027-71.475-51.822-83.755-54.239c0.002-0.023-7.469-1.518-7.946-1.521c0,0-9.659-1.953-20.854,2.93
+               			c-7.291,2.805-45.408,20.09-56.227,52.83c-6.528,19.428,1.614,60.511,1.614,60.511s0.365-0.245-4.304,4.029l-0.695,0.755
+               			c-3.158,3.586-2.378,14.806,1.074,26.479c3.128,11.695,7.205,14.838,8.182,17.577c9.903,46.497,44.338,86.197,79.429,86.197
+               			s67.707-39.7,77.61-86.197c0.978-2.738,5.055-5.882,8.183-17.577C333.301,136.246,334.172,124.256,330.924,121.441z" />
+                  </g>
+               </g>
+            </svg>
+            <svg class="playground__icons computer" width="100" alt="Компьютер" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+               y="0px" viewBox="0 0 109.602 109.602" style="enable-background:new 0 0 109.602 109.602;"
+               xml:space="preserve">
+               <g>
+                  <g>
+                     <g>
+                        <ellipse cx="99.549" cy="28.919" rx="1.51" ry="0.752" />
+                     </g>
+                     <g>
+                        <path d="M106.585,17.166H67.443c-1.657,0-3.013,1.356-3.013,3.01V31.07h6.027v-8.353h33.119v9.029H75.163
+				v8.278h28.412v1.507H75.163v7.526h28.412v1.503H75.163v34.189H64.437v4.67c0,1.653,1.356,3.01,3.01,3.01h39.145
+				c1.653,0,3.01-1.356,3.01-3.01V20.172C109.595,18.522,108.239,17.166,106.585,17.166z M87.009,72.527
+				c-2.491,0-4.517-2.018-4.517-4.517c0-2.491,2.022-4.517,4.517-4.517c2.494,0,4.52,2.018,4.52,4.517
+				C91.529,70.509,89.503,72.527,87.009,72.527z" />
+                     </g>
+                     <g>
+                        <rect x="0" y="34.652" width="71.577" height="46.525" />
+                     </g>
+                     <g>
+                        <polygon points="25.052,85.279 17.894,92.436 53.683,92.436 46.525,85.279" />
+                     </g>
+                  </g>
+               </g>
+            </svg>
+         </div>
+         <div class="playground__fields">
+            <button class="playground__field" data-row="0" data-col="0">field-0-0</button>
+            <button class="playground__field" data-row="0" data-col="1">field-0-1</button>
+            <button class="playground__field" data-row="0" data-col="2">field-0-2</button>
+            <button class="playground__field" data-row="1" data-col="0">field-1-0</button>
+            <button class="playground__field" data-row="1" data-col="1">field-1-1</button>
+            <button class="playground__field" data-row="1" data-col="2">field-1-2</button>
+            <button class="playground__field" data-row="2" data-col="0">field-2-0</button>
+            <button class="playground__field" data-row="2" data-col="1">field-2-1</button>
+            <button class="playground__field" data-row="2" data-col="2">field-2-2</button>
+         </div>
+      </section>
+
+      <section class="statistics">
+         <div class="statistics__result">
+            <p class="statistics__total">Сыграно игр: <span class="statistics__total-score"></span></p>
+            <p class="statistics__user">Пользователь: <span class="statistics__user-score"></span></p>
+            <p class="statistics__draw">Ничья: <span class="statistics__draw-score"></span></p>
+            <p class="statistics__computer">Компьютер: <span class="statistics__computer-score"></span></p>
+         </div>
+         <div class="statistics__history">
+            <p class="history-title">История игр:</p>
+            <ul class="history-list">
+               <li class="history-item">История пока пуста</li>
+            </ul>
+         </div>
+      </section>
+
+      <div class="new-game">
+         <button class="new-game-button">Начать новую игру!</button>
+      </div>
+   </main>
+
+   <!-- <section class="modal">
+         <button class="new-game-button">
+            Начать новую игру!
+         </button>
+      </section> -->
+
+   
+   <template id="history-item-template">
+      <li class="history-item">
+         <span class="game-number"></span>
+         <span class="game-winner"></span>
+         <img class="game-winner-icon">
+      </li>
+   </template>
+
+   <script src="script.js"></script>
+</body>
+
+</html>

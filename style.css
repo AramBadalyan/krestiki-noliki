@@ -1,0 +1,164 @@
+.page__body{
+   background-color: #444444;
+   color: deepskyblue;
+   font-family: Arial, serif;
+   font-weight: 800;
+   box-sizing: border-box;
+
+   width: 720px;
+   margin: 0 auto;
+}
+
+.page-main {
+   display: grid;
+   grid-template-columns: 2fr 1fr;
+}
+
+.playground__players {
+   margin: 40px auto;
+
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+}
+
+.playground__current-player {
+   width: 100%;
+   text-align: center;
+}
+
+.playground__fields {
+   display: grid;
+   gap: 10px;
+   grid-template-columns: 1fr 1fr 1fr;
+   grid-template-rows: 1fr 1fr 1fr;
+}
+
+.playground__field {
+   height: 150px;
+   background-color: #666666;
+   border: 10px solid deepskyblue;
+   font-size: 0px;
+   color: rgba(0, 0, 0, 0);
+
+   position: relative;
+
+   transition: all 0.5s ease-out;
+}
+
+.playground__field::after {
+   content: 'X';
+   width: 100%;
+   height: 100%;
+   font-weight: 800;
+   font-size: 130px;
+   line-height: 130px;
+   color: #444444;
+
+   position: absolute;
+   top: 0;
+   left: 0;
+}
+
+.playground__field::before {
+   content: 'O';
+   width: 100%;
+   height: 100%;
+   font-weight: 800;
+   font-size: 130px;
+   line-height: 130px;
+   color: #555555;
+
+   position: absolute;
+   top: 0;
+   left: 0;
+}
+
+.playground__field.filled-x {
+   background-color: rgba(0, 127, 0, 0.1);
+   transform: scaleX(-1);
+}
+
+.playground__field.filled-x::after {
+   color: rgb(56, 200, 56);
+   z-index: 2;
+}
+
+.playground__field.filled-0 {
+   background-color: rgba(127, 0, 0, 0.1);
+   transform: rotate(180deg);
+}
+
+.playground__field.filled-0::before {
+   color: red;
+   z-index: 2;
+}
+
+.playground__icons {
+   transition: fill 0.5s ease-out;
+}
+
+.playground__icons.active{
+   fill: yellow;
+}
+
+.statistics__result {
+   transition: all 0.5s ease-out;
+}
+
+.statistics {
+   text-align: right;
+}
+
+.statistics__history {
+   margin-top: 108px;
+}
+
+.history-list {
+   list-style: none;
+
+   margin-left: 15px; 
+   padding: 0px;
+   height: 470px;
+   overflow-y: auto;
+
+   background-color: dimgray;
+}
+
+.history-item {
+   margin: 0;
+   padding: 5px;
+   text-align: left;
+   position: relative;
+}
+
+.game-winner-icon {
+   width: 20px;
+   height: auto;
+
+   position: absolute;
+   right: 5px;
+   top: 3px;
+   opacity: 0.8;
+}
+
+.new-game {
+   text-align: center;
+}
+
+.new-game-button {
+   padding: 10px;
+   background-color: #666666;
+   border: 10px double deepskyblue;
+   font-weight: 800;
+   font-size: 16px;
+   color: white;
+}
+
+.new-game-button:hover:not(:disabled) {
+   border-style: solid;
+}
+
+.new-game-button:disabled {
+   opacity: 0.3;
+}
